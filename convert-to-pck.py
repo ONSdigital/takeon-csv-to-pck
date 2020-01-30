@@ -42,9 +42,16 @@ for row in dictionary_list:
         pck_file.write(form_separator)
         reference_line = survey_number + ':' + row['responder_id'] + checkletter + ':' + row['period'][2:] + '\n'
         list_of_question_values = [(key, value) for key, value in row.items() if key.startswith("Q")]
+        list_of_question_values.append(('Q0146','0'))
+        list_of_question_values.append(('Q0147','0'))
+        list_of_question_values.append(('Q9001','0'))
+        print(list_of_question_values)
         pck_file.writelines([reference_line])
         for question_tuple in list_of_question_values:
-            question = str(question_tuple[0][1:4]).zfill(4)
+            if len(str(question_tuple[0])) == 5:
+                question = str(question_tuple[0][1:5])
+            else:
+                question = str(question_tuple[0][1:4]).zfill(4)
             response = str(question_tuple[1]).zfill(11)
             response_line = question + ' ' + response + '\n'
             pck_file.write(response_line)
