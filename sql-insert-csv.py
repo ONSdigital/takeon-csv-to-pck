@@ -5,7 +5,7 @@ from datetime import datetime
 
 survey = '0066'
 form_id = 1
-status = 'Form Returned'
+status = 'Form Sent Out'
 esc = "\'"
 
 with open('Example_Results_Land_Input_Data_SAS.csv', newline='') as csvfile:
@@ -54,4 +54,3 @@ for row in dictionary_list:
     
 sql_file = open("insert-into-contributor.sql", "w")
 sql_file.writelines([insert_statement, insert_row])
-print(insert_statement + insert_row)
