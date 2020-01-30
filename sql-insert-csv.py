@@ -94,3 +94,4 @@ for row in dictionary_list:
     
 sql_file = open('insert-into-contributor.sql', 'w')
 sql_file.writelines([insert_statement, insert_row[:-2], ';'])
+sql_file.close()
