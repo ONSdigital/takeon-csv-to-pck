@@ -44,8 +44,6 @@ for row in dictionary_list:
         list_of_question_values = [(key, value) for key, value in row.items() if key.startswith("Q")]
         list_of_question_values.append(('Q0146','0'))
         list_of_question_values.append(('Q0147','0'))
-        list_of_question_values.append(('Q9001','0'))
-        print(list_of_question_values)
         pck_file.writelines([reference_line])
         for question_tuple in list_of_question_values:
             if len(str(question_tuple[0])) == 5:
