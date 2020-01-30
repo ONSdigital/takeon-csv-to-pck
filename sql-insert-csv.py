@@ -25,22 +25,62 @@ for list in batch_list:
     dictionary = dict(zip(header, list))
     dictionary_list.append(dictionary)
 
-insert_statement = """INSERT INTO dev01.contributor (
-    Reference,Period,Survey,FormID,Status,ReceiptDate,LockedBy,LockedDate,FormType,
-    Checkletter,FrozenSicOutdated,RuSicOutdated,FrozenSic,RuSic,FrozenEmployees,
-    Employees,FrozenEmployment,Employment,FrozenFteEmployment,FteEmployment,FrozenTurnover,
-    Turnover,EnterpriseReference,WowEnterpriseReference,CellNumber,Currency,VatReference,
-    PayeReference,CompanyRegistrationNumber,NumberLiveLocalUnits,NumberLiveVat,NumberLivePaye,
-    LegalStatus,ReportingUnitMarker,Region,BirthDate,EnterpriseName,ReferenceName,ReferenceAddress,
-    ReferencePostcode,TradingStyle,Contact,Telephone,Fax,SelectionType,InclusionExclusion,CreatedBy,
-    CreatedDate,LastUpdatedBy,LastUpdatedDate
-    ) VALUES """
+insert_statement = """Insert Into dev01.Contributor
+(
+    Reference                  ,
+    Period                     ,
+    Survey                     ,
+    FormID                     ,
+    Status                     ,
+    ReceiptDate                ,
+    FormType                   ,
+    Checkletter                ,
+    FrozenSicOutdated          ,
+    RuSicOutdated              ,
+    FrozenSic                  ,
+    RuSic                      ,
+    FrozenEmployees            ,
+    Employees                  ,
+    FrozenEmployment           ,
+    Employment                 ,
+    FrozenFteEmployment        ,
+    FteEmployment              ,
+    FrozenTurnover             ,
+    Turnover                   ,
+    EnterpriseReference        ,
+    WowEnterpriseReference     ,
+    CellNumber                 ,
+    Currency                   ,
+    VatReference               ,
+    PayeReference              ,
+    CompanyRegistrationNumber  ,
+    NumberLiveLocalUnits       ,
+    NumberLiveVat              ,
+    NumberLivePaye             ,
+    LegalStatus                ,
+    ReportingUnitMarker        ,
+    Region                     ,
+    BirthDate                  ,
+    EnterpriseName             ,
+    ReferenceName              ,
+    ReferenceAddress           ,
+    ReferencePostcode          ,
+    TradingStyle               ,
+    Contact                    ,
+    Telephone                  ,
+    Fax                        ,
+    SelectionType              ,
+    InclusionExclusion         ,
+    CreatedBy                  ,
+    CreatedDate                ,
+	LastUpdatedBy              ,
+    LastUpdatedDate  
+) VALUES """
 insert_row = ''
 
 for row in dictionary_list:
     insert_row += '(' + esc + row['responder_id'] + esc + ',' + esc + row['period'] + esc 
     insert_row += ',' + esc + survey + esc + ',' + str(form_id) + ',' + esc + status + esc + ',' + 'now()'
-    insert_row += ',' + esc + ' ' + esc + ',' + esc + ' ' + esc
     insert_row += ',' + esc + '0004' + esc + ',' + esc + 'T' + esc + ',' + esc + '70110' + esc + ',' + esc + '70110' + esc + ',' + esc + '41100' + esc
     insert_row += ',' + esc + '41100' + esc + ',' + str(750) + ',' + str(748) + ',' + str(100) + ',' + str(100) + ',' + str(100) + ',' + str(100) + ',' + str(99999)
     insert_row += ',' + str(99999) + ',' + esc + row['enterprise_ref'] + esc + ',' + esc + '2906948169' + esc + ',' + str(1) + ',' + esc + 'S' + esc 
