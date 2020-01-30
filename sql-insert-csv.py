@@ -53,4 +53,4 @@ for row in dictionary_list:
     insert_row += "," + esc + 'fisdba' + esc + "," + 'now()' + "," + esc + 'fisdba' + esc + "," + 'now()' + '),' + '\n'
     
 sql_file = open("insert-into-contributor.sql", "w")
-sql_file.writelines([insert_statement, insert_row])
+sql_file.writelines([insert_statement, insert_row[:-2], ';'])
