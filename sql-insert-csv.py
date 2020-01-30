@@ -43,11 +43,11 @@ for row in dictionary_list:
     insert_row += ',' + esc + ' ' + esc + ',' + esc + ' ' + esc
     insert_row += ',' + esc + '0004' + esc + ',' + esc + 'T' + esc + ',' + esc + '70110' + esc + ',' + esc + '70110' + esc + ',' + esc + '41100' + esc
     insert_row += ',' + esc + '41100' + esc + ',' + str(750) + ',' + str(748) + ',' + str(100) + ',' + str(100) + ',' + str(100) + ',' + str(100) + ',' + str(99999)
-    insert_row += ',' + str(99999) + ',' + row['enterprise_ref'] + ',' + esc + '2906948169' + esc + ',' + str(1) + ',' + esc + 'S' + esc 
+    insert_row += ',' + str(99999) + ',' + esc + row['enterprise_ref'] + esc + ',' + esc + '2906948169' + esc + ',' + str(1) + ',' + esc + 'S' + esc 
     insert_row += ',' + esc + '326935020502' + esc + ',' + esc + '2135632144542' + esc
     insert_row += ',' + esc + '97395797' + esc + ',' + str(178) + ',' + str(0) + ',' + str(0) + ',' + esc + '1' + esc + ',' + esc + 'E' + esc 
     insert_row += ',' + esc + row['gor_code'] + esc + ',' + esc + '06/06/1975' + esc
-    insert_row += ',' + esc + 'Hayes, Fletcher and Shaw' + esc + ',' + esc + 'Lawrence Group Ltd' + esc + ',' + esc + '9 Brenda falls,East Harry, Wales' + esc 
+    insert_row += ',' + esc + row['enterprise_name'] + esc + ',' + esc + row['enterprise_name'] + esc + ',' + esc + '9 Brenda falls,East Harry, Wales' + esc 
     insert_row += ',' + esc + 'L2T 0PR' + esc + ',' + esc + 'Sole Trader' + esc + ',' + esc + 'Heather Griffiths' + esc
     insert_row += ',' + esc + '01633 5551234' + esc + ',' + esc + '54321' + esc + ',' + esc + 'P' + esc + ',' + esc + ' ' + esc
     insert_row += ',' + esc + 'fisdba' + esc + ',' + 'now()' + ',' + esc + 'fisdba' + esc + ',' + 'now()' + '),' + '\n'
